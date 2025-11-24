@@ -1,0 +1,18 @@
+day-7:
+ALert And pop ups
+-->we have js based alert for that we use and these are not located by CSS selector or XPATH
+    1.driver.switch_to.alert
+    2.alert.accept()
+    3.alert.dismiss()
+    4.alert.Text 
+
+-->we have html based alert/modals which are located by CSS selector and XPATH
+     
+
+Exception Handling:
+--> python Exception used in Automation ALert
+      1.NoSuchElementEXception
+      2.ElementNotInteractableException
+      3.staleElementreferenceException
+      4.TimeOutException
+      5.ElementClickInterceptedException
