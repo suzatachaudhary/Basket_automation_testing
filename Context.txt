@@ -1,13 +1,26 @@
 day-7:
-ALert And pop ups
--->we have js based alert for that we use and these are not located by CSS selector or XPATH
-    1.driver.switch_to.alert
-    2.alert.accept()
-    3.alert.dismiss()
-    4.alert.Text 
+ALERTS & POPUPS
 
--->we have html based alert/modals which are located by CSS selector and XPATH
-     
+1. JS Alerts (Browser Alerts)
+   - Not in DOM → cannot use CSS or XPath
+   - Must use:
+       driver.switch_to.alert
+       alert.accept()
+       alert.dismiss()
+       alert.text
+   - Types:
+       alert()
+       confirm()
+       prompt()
+
+2. HTML Based Popups/Modals
+   - Part of DOM → can be inspected
+   - Can use CSS/XPath:
+       div.modal
+       button.close
+   - Interaction same as normal elements
+   - Usually designed with Bootstrap/JS frameworks
+
 
 Exception Handling:
 --> python Exception used in Automation ALert

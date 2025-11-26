@@ -10,7 +10,6 @@ from selenium.common.exceptions import(
   TimeoutException,
   ElementNotInteractableException,
   ElementClickInterceptedException
-  
 )
 import time
 import os
@@ -27,7 +26,7 @@ WebDriverWait(driver,10).until(EC.title_contains("Oscar"))
 books=WebDriverWait(driver,10).until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR,"article.product_pod h3 a")))
 
 books_titles=[]
-for i in range(3):
+for i in range(4):
   book=books[i]
   title=book.get_attribute("title")
   books_titles.append(title)
@@ -38,8 +37,8 @@ for i in range(3):
   assert book_title==title,"product title mismatch"
   
   
-  add_buuton=WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.CSS_SELECTOR,"button.btn.btn-lg.btn-primary.btn-add-to-basket")))
-  add_buuton.click()
+  add_button=WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.CSS_SELECTOR,"button.btn.btn-lg.btn-primary.btn-add-to-basket")))
+  add_button.click()
   
   #success message validation
   success_message=WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.CSS_SELECTOR,"div.alertinner"))).text
@@ -48,7 +47,7 @@ for i in range(3):
   #Handle any alert pop up
   try:
     WebDriverWait(driver,10).until(EC.alert_is_present())
-    alert=driver.switch_to.alert()
+    alert=driver.switch_to.alert
     print("Alert text :",alert.text)
     alert.accept()
   except TimeoutException:
@@ -67,8 +66,8 @@ for i in range(3):
     print("No modal detected as expected")
     
  # Go back to homepage
-    driver.get("https://selenium1py.pythonanywhere.com/")
-    books = driver.find_elements(By.CSS_SELECTOR, "article.product_pod h3 a")
+  driver.get("https://selenium1py.pythonanywhere.com/")
+  books = driver.find_elements(By.CSS_SELECTOR, "article.product_pod h3 a")
 
 # GO TO BASKET AND VALIDATE
 try:
