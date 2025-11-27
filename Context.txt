@@ -29,3 +29,53 @@ Exception Handling:
       3.staleElementreferenceException
       4.TimeOutException
       5.ElementClickInterceptedException
+
+iframe and window Handling
+-->An iframe is an HTML element that embeds another webpage inside the current webpage, creating a separate document that Selenium must switch into before interacting with its elements.
+driver.switch_to.frame("iframe")
+
+-->for window we have 2 methods current_window_handle and window_handles
+and we can switch to next window by using driver.switch_to.window(win)
+
+##Dropdown and Select Class
+-->we have 2 types of Dropdown
+   1.html based(category)--for this we use Select Class 
+     
+     methods of select class alert
+     1.select_by_index(0)
+     2.select_by_value(2)
+     3.select_by_visible_text("Nepal")
+     4.deselect_*
+
+  2.Custom dropdown(js,react,Bootstrap)
+  --> these doesnot use select tags
+  Instead we do:
+    Click dropdown
+    Click item
+    Use Action chains if needed
+
+##Keyboard Actions
+-->why is it imp:
+   Sites often require text entry + keyboard navigation:
+        Search fields
+        Login forms
+        Rich text editors
+        Filling multiple fields
+        Selecting all text
+
+##Scrolling(js executor)
+-->Used when:
+        Element is NOT visible on screen
+        Dynamic infinite scroll pages (e.g., Instagram)
+        Large pages
+        Lazy-loaded content
+
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+##File Uploads + download
+-->when input has a type File
+    <input type="file">
+    driver.find_element(By.ID,"fileUpload").send_keys("C:/path/file.png")
+
+
+
